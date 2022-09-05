@@ -24,7 +24,7 @@ const Header = () => {
               <Nav.Link href="home">Home</Nav.Link>
               <Nav.Link href="home#services">Services</Nav.Link>
               <Nav.Link href="home#experts">Experts</Nav.Link>
-              <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+              {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#map">
                   Action id
@@ -34,11 +34,17 @@ const Header = () => {
                 <NavDropdown.Item href="#action/3.4">
                   Separated link
                 </NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown> */}
             </Nav>
             <Nav>
             <Nav.Link as={Link} to="map">Map</Nav.Link>
               <Nav.Link as={Link} to="about">About</Nav.Link>
+              {
+                user && <>
+                  <Nav.Link as={Link} to="addservice">AddService</Nav.Link>
+                  <Nav.Link as={Link} to="manage">ManageServices</Nav.Link>
+                </>
+              }
               {
                 user ?
                   <button className='btn btn-link text-white text-decoration-none' onClick={handleSignOut}>Sign Out</button>
